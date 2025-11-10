@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import { PlayerProvider } from './context/PlayerContext';
 import Player from './components/Player/Player';
+import MediaList from './components/Player/MediaList';
 import FileUploader from './components/FileUploader/FileUploader';
 import PluginList from './components/PluginManager/PluginList';
 import { Music, Upload, Package } from 'lucide-react';
@@ -81,6 +82,7 @@ function App() {
                   </p>
                 </div>
                 <Player />
+                <MediaList />
               </div>
             )}
 

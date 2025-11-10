@@ -54,17 +54,19 @@ const FileUploader = ({ onUploadSuccess }) => {
       if (result.success) {
         setUploadStatus({
           type: 'success',
-          message: `Upload realizado com sucesso!`,
+          message: `Upload realizado com sucesso! Vá para a aba "Player" para reproduzir.`,
           data: result,
         });
 
-        // Adiciona à playlist
-        addToPlaylist({
+        // Adiciona à playlist e reproduz automaticamente
+        const media = {
           filename: result.filename,
           format: result.analysis.metadata.format,
           metadata: result.analysis.metadata,
           plugin_used: result.analysis.plugin_used,
-        });
+        };
+
+        addToPlaylist(media);
 
         if (onUploadSuccess) {
           onUploadSuccess(result);

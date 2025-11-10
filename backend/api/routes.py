@@ -9,6 +9,7 @@ from typing import List
 
 from api.models import (
     PluginMetadataResponse,
+    MediaMetadataResponse,
     MediaAnalysisResponse,
     MediaValidationResponse,
     MediaFileInfo,
